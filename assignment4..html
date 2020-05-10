@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>
+            My javascript code
+        </title>
+    </head>
+    <body>
+        <script>
+            (function(window) {
+            var goodbye = new Object();
+            var speakWord = "GoodBye";
+            goodbye.speak = function speak(name) {
+                document.writeln(speakWord + " " + name);
+                document.write("\n");
+            };
+            window.goodbye =goodbye;
+            })(window);
+             (function(window) {
+            var hello = new Object();
+            var speakWord = "Hello";
+            hello.speak = function(name) {
+                document.writeln(speakWord + " " + name);
+                document.writeln("\n");
+            };
+            window.hello = hello;
+            })(window);
+            (function() {
+                var names = ["jimmy", "John", "peterson", "abhishek", "george", "joy", "jason", "cook", "ricky", "jonny"];
+                for (var i = 0; i < names.length; i++) {
+                var initial = names[i].charAt(0).toLowerCase();
+                if (initial === 'j') {
+                goodbye.speak(names[i]);
+                }   else {
+                hello.speak(names[i]);
+                }
+            }
+        })();
+        </script>
+    </body>
+</html>
